@@ -90,7 +90,21 @@ final class MedicineViewController: UIViewController {
             bottom: 10,
             trailing: 16
         )
+        section.boundarySupplementaryItems = [supplementaryHeaderItem()]
         return section
+    }
+    
+    // MARK: - Supplementary Header Item
+    
+    private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        return NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .absolute(43)
+            ),
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .topLeading
+        )
     }
 }
 
