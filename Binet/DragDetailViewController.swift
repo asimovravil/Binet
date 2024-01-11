@@ -49,6 +49,17 @@ class DragDetailViewController: UIViewController {
         return label
     }()
     
+    private lazy var detailSubTitle: UILabel = {
+        let label = UILabel()
+        label.text = "Двухкомпонентный протравитель семян зерновых культур."
+        label.textAlignment = .left
+        label.textColor = UIColor(named: "grayCustom")
+        label.numberOfLines = 0
+        label.font = UIFont(name: "SFProDisplay-Regular", size: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
