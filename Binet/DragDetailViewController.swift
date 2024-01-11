@@ -29,6 +29,15 @@ class DragDetailViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var favouriteImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "favourite")
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
