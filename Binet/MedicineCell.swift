@@ -9,6 +9,8 @@ import UIKit
 
 final class MedicineCell: UICollectionViewCell {
     
+    static let reuseID = String(describing: MedicineCell.self)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
