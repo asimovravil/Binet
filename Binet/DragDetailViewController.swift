@@ -38,6 +38,17 @@ class DragDetailViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var detailTitle: UILabel = {
+        let label = UILabel()
+        label.text = "ДВД Шанс, КС"
+        label.textAlignment = .left
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
