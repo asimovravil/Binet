@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class DragDetailViewController: UIViewController {
 
@@ -63,6 +64,7 @@ class DragDetailViewController: UIViewController {
     private lazy var detailButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "buttonBuy"), for: .normal)
+        button.addTarget(self, action: #selector(openWebsite), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -174,5 +176,14 @@ class DragDetailViewController: UIViewController {
                 imageView.image = image
             }
         }.resume()
+    }
+    
+    // MARK: - Action
+    
+    @objc func openWebsite() {
+        if let url = URL(string: "https://www.mic.by/spravochnaya-informatsiyap/klassifikatsiya-lekarstvennykh-sredstv/") {
+            let safariVC = SFSafariViewController(url: url)
+            self.present(safariVC, animated: true, completion: nil)
+        }
     }
 }
