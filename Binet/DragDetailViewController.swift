@@ -20,6 +20,15 @@ class DragDetailViewController: UIViewController {
         return imageView
     }()
     
+    private lazy var detailImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "detailImage")
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
