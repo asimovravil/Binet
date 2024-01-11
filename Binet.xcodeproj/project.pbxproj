@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		F1838B742B502E1000CDB486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B732B502E1000CDB486 /* AppDelegate.swift */; };
 		F1838B762B502E1000CDB486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B752B502E1000CDB486 /* SceneDelegate.swift */; };
-		F1838B782B502E1000CDB486 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B772B502E1000CDB486 /* ViewController.swift */; };
+		F1838B782B502E1000CDB486 /* MedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B772B502E1000CDB486 /* MedicineViewController.swift */; };
 		F1838B7D2B502E1100CDB486 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1838B7C2B502E1100CDB486 /* Assets.xcassets */; };
 		F1838B802B502E1100CDB486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1838B7E2B502E1100CDB486 /* LaunchScreen.storyboard */; };
+		F1838B882B502FF400CDB486 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B872B502FF400CDB486 /* MedicineCell.swift */; };
+		F1838B8A2B50328600CDB486 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B892B50328600CDB486 /* Medicine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F1838B702B502E1000CDB486 /* Binet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1838B732B502E1000CDB486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1838B752B502E1000CDB486 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1838B772B502E1000CDB486 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1838B772B502E1000CDB486 /* MedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineViewController.swift; sourceTree = "<group>"; };
 		F1838B7C2B502E1100CDB486 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1838B7F2B502E1100CDB486 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1838B812B502E1100CDB486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1838B872B502FF400CDB486 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
+		F1838B892B50328600CDB486 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +60,9 @@
 			children = (
 				F1838B732B502E1000CDB486 /* AppDelegate.swift */,
 				F1838B752B502E1000CDB486 /* SceneDelegate.swift */,
-				F1838B772B502E1000CDB486 /* ViewController.swift */,
+				F1838B772B502E1000CDB486 /* MedicineViewController.swift */,
+				F1838B872B502FF400CDB486 /* MedicineCell.swift */,
+				F1838B892B50328600CDB486 /* Medicine.swift */,
 				F1838B7C2B502E1100CDB486 /* Assets.xcassets */,
 				F1838B7E2B502E1100CDB486 /* LaunchScreen.storyboard */,
 				F1838B812B502E1100CDB486 /* Info.plist */,
@@ -134,9 +140,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1838B782B502E1000CDB486 /* ViewController.swift in Sources */,
+				F1838B782B502E1000CDB486 /* MedicineViewController.swift in Sources */,
 				F1838B742B502E1000CDB486 /* AppDelegate.swift in Sources */,
+				F1838B8A2B50328600CDB486 /* Medicine.swift in Sources */,
 				F1838B762B502E1000CDB486 /* SceneDelegate.swift in Sources */,
+				F1838B882B502FF400CDB486 /* MedicineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
