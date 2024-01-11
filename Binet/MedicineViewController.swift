@@ -20,8 +20,18 @@ final class MedicineViewController: UIViewController {
         return collectionView
     }()
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
+    }
+    
+    // MARK: - Setup Views
+    
+    private func setupViews() {
+        view.addSubview(collectionView)
+        view.backgroundColor = .white
     }
 }
