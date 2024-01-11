@@ -108,6 +108,8 @@ final class MedicineCell: UICollectionViewCell {
         ])
     }
     
+    // MARK: - Configure
+    
     func configure(with drug: Drug) {
         medicineTitle.text = drug.name
         medicineSubTitle.text = drug.description

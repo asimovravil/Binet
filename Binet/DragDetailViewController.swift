@@ -74,6 +74,7 @@ class DragDetailViewController: UIViewController {
 
         setupViews()
         setupConstraints()
+        setupNavigationBar()
     }
     
     // MARK: - Setup Views
@@ -92,6 +93,7 @@ class DragDetailViewController: UIViewController {
             detailImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             detailImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             detailImage.heightAnchor.constraint(equalToConstant: 183),
+            detailImage.widthAnchor.constraint(equalToConstant: 117),
             
             detailLogo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
             detailLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
@@ -113,5 +115,64 @@ class DragDetailViewController: UIViewController {
             detailButton.topAnchor.constraint(equalTo: detailSubTitle.bottomAnchor, constant: 16),
             detailButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
+    }
+    
+    // MARK: - Setup Navigation Bar
+    
+    private func setupNavigationBar() {
+        let leftImage = UIImage(named: "left.pdf")
+        let leftBarButtonItem = UIBarButtonItem(image: leftImage, style: .plain, target: self, action: #selector(leftBarButtonTapped))
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(named: "greenCustom")
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    @objc func leftBarButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: - Configure With Drug Detail
+    
+    func configureWithDrug(_ drug: Drug) {
+        detailTitle.text = drug.name
+        detailSubTitle.text = drug.description
+
+        if let logoImageUrl = URL(string: "http://shans.d2.i-partner.ru/\(drug.categories.icon)") {
+            loadImage(from: logoImageUrl, into: detailLogo)
+        } else {
+            detailLogo.image = UIImage(named: "logo")
+        }
+
+        if let detailImageUrl = URL(string: "http://shans.d2.i-partner.ru/\(drug.image)") {
+            loadImage(from: detailImageUrl, into: detailImage)
+        } else {
+            detailLogo.image = UIImage(named: "detailImage")
+        }
+    }
+
+    private func loadImage(from url: URL, into imageView: UIImageView) {
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let _ = self else { return }
+
+            if let error = error {
+                print("Error loading image: \(error.localizedDescription)")
+                return
+            }
+
+            guard let data = data, let image = UIImage(data: data) else {
+                print("Invalid image data")
+                return
+            }
+
+            DispatchQueue.main.async {
+                imageView.image = image
+            }
+        }.resume()
     }
 }

@@ -13,6 +13,7 @@ final class MedicineViewController: UIViewController {
     private var isSearchActive: Bool = false
     private var filteredDrugs: [Drug] = []
     let sections: [Medicine] = [.medicine]
+    private var searchController: UISearchController?
     
     // MARK: - UI
     
@@ -79,6 +80,8 @@ final class MedicineViewController: UIViewController {
         navBarAppearance.backgroundColor = UIColor(named: "greenCustom")
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     @objc func leftBarButtonTapped() {
@@ -89,12 +92,14 @@ final class MedicineViewController: UIViewController {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Найти препараты"
         searchBar.delegate = self
-        
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Найти препараты"
-        
-        present(searchController, animated: true, completion: nil)
+
+        searchController = UISearchController(searchResultsController: nil)
+        searchController?.searchBar.delegate = self
+        searchController?.searchBar.placeholder = "Найти препараты"
+
+        if let searchController = searchController {
+            present(searchController, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Load Credit Data
@@ -196,6 +201,22 @@ extension MedicineViewController: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return isSearchActive ? filteredDrugs.count : drugs.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedDrug = isSearchActive ? filteredDrugs[indexPath.row] : drugs[indexPath.row]
+        openDrugDetail(with: selectedDrug)
+    }
+    
+    private func openDrugDetail(with drug: Drug) {
+        if isSearchActive {
+            searchController?.dismiss(animated: true, completion: nil)
+        }
+
+        let detailVC = DragDetailViewController()
+        detailVC.configureWithDrug(drug)
+        searchController?.dismiss(animated: true, completion: nil)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
