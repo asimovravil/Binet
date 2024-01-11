@@ -23,6 +23,8 @@
 		F1838B9B2B5038B500CDB486 /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B922B5038B500CDB486 /* SFProDisplay-Semibold.ttf */; };
 		F1838B9C2B5038B500CDB486 /* SFProDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B932B5038B500CDB486 /* SFProDisplay-Heavy.ttf */; };
 		F1838B9D2B5038B500CDB486 /* SFProDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B942B5038B500CDB486 /* SFProDisplay-Thin.ttf */; };
+		F1838B9F2B50404500CDB486 /* Drug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B9E2B50404500CDB486 /* Drug.swift */; };
+		F1838BA12B5040BA00CDB486 /* DrugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838BA02B5040BA00CDB486 /* DrugService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		F1838B922B5038B500CDB486 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
 		F1838B932B5038B500CDB486 /* SFProDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Heavy.ttf"; sourceTree = "<group>"; };
 		F1838B942B5038B500CDB486 /* SFProDisplay-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Thin.ttf"; sourceTree = "<group>"; };
+		F1838B9E2B50404500CDB486 /* Drug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drug.swift; sourceTree = "<group>"; };
+		F1838BA02B5040BA00CDB486 /* DrugService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				F1838B772B502E1000CDB486 /* MedicineViewController.swift */,
 				F1838B872B502FF400CDB486 /* MedicineCell.swift */,
 				F1838B892B50328600CDB486 /* Medicine.swift */,
+				F1838B9E2B50404500CDB486 /* Drug.swift */,
+				F1838BA02B5040BA00CDB486 /* DrugService.swift */,
 				F1838B7C2B502E1100CDB486 /* Assets.xcassets */,
 				F1838B7E2B502E1100CDB486 /* LaunchScreen.storyboard */,
 				F1838B812B502E1100CDB486 /* Info.plist */,
@@ -188,7 +194,9 @@
 				F1838B742B502E1000CDB486 /* AppDelegate.swift in Sources */,
 				F1838B8A2B50328600CDB486 /* Medicine.swift in Sources */,
 				F1838B762B502E1000CDB486 /* SceneDelegate.swift in Sources */,
+				F1838BA12B5040BA00CDB486 /* DrugService.swift in Sources */,
 				F1838B882B502FF400CDB486 /* MedicineCell.swift in Sources */,
+				F1838B9F2B50404500CDB486 /* Drug.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
