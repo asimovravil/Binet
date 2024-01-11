@@ -67,9 +67,20 @@ class DragDetailViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        setupViews()
+    }
+    
+    // MARK: - Setup Views
+    
+    private func setupViews() {
+        [detailLogo, detailImage, favouriteImage, detailTitle, detailSubTitle].forEach {
+            view.addSubview($0)
+        }
+        view.backgroundColor = .white
     }
 }
