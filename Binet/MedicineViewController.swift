@@ -14,9 +14,10 @@ final class MedicineViewController: UIViewController {
     // MARK: - UI
     
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.register(MedicineCell.self, forCellWithReuseIdentifier: MedicineCell.reuseID)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
@@ -50,6 +51,19 @@ final class MedicineViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
+    
+    // MARK: - Create Layout
+    
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
+            let section = self?.sections[sectionIndex] ?? .medicine
+            switch section {
+            case .medicine:
+                return .none
+            }
+        }
+    }
+
 }
 
 extension MedicineViewController: UICollectionViewDataSource, UICollectionViewDelegate {
