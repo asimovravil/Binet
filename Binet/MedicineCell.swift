@@ -25,6 +25,15 @@ final class MedicineCell: UICollectionViewCell {
         return uiView
     }()
     
+    private lazy var medicineImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "imageCell")
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
