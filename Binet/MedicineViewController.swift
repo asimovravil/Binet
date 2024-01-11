@@ -85,7 +85,12 @@ final class MedicineViewController: UIViewController {
     }
 
     @objc func leftBarButtonTapped() {
-        print("arrow")
+        if isSearchActive {
+            isSearchActive = false
+            filteredDrugs.removeAll()
+            collectionView.reloadData()
+        }
+        navigationController?.popViewController(animated: true)
     }
 
     @objc func searchBarButtonTapped() {
