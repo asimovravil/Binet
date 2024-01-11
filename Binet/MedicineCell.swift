@@ -59,6 +59,7 @@ final class MedicineCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -71,4 +72,13 @@ final class MedicineCell: UICollectionViewCell {
         medicineCard.layer.cornerRadius = 8
         medicineImage.layer.cornerRadius = 8
     }
+    
+    // MARK: - Setup Views
+    
+    private func setupViews() {
+        [medicineCard, medicineImage, medicineTitle, medicineSubTitle].forEach {
+            contentView.addSubview($0)
+        }
+    }
+
 }
