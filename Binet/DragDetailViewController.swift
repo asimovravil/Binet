@@ -60,6 +60,13 @@ class DragDetailViewController: UIViewController {
         return label
     }()
     
+    private lazy var detailButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "buttonBuy"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
