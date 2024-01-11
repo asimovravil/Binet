@@ -32,6 +32,7 @@ final class MedicineViewController: UIViewController {
         
         setupViews()
         setupConstraints()
+        setupNavigationBar()
     }
     
     // MARK: - Setup Views
@@ -50,6 +51,12 @@ final class MedicineViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+    
+    // MARK: - Setup Navigation Bar
+    
+    private func setupNavigationBar() {
+        
     }
     
     // MARK: - Create Layout
