@@ -10,6 +10,8 @@ import UIKit
 final class MedicineViewController: UIViewController {
     
     var drugs: [Drug] = []
+    private var isSearchActive: Bool = false
+    private var filteredDrugs: [Drug] = []
     let sections: [Medicine] = [.medicine]
     
     // MARK: - UI
@@ -84,7 +86,15 @@ final class MedicineViewController: UIViewController {
     }
 
     @objc func searchBarButtonTapped() {
-        print("search")
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Найти препараты"
+        searchBar.delegate = self
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Найти препараты"
+        
+        present(searchController, animated: true, completion: nil)
     }
     
     // MARK: - Load Credit Data
@@ -178,17 +188,28 @@ extension MedicineViewController: UICollectionViewDataSource, UICollectionViewDe
             ) as? MedicineCell else {
                 fatalError("Could not cast to MedicineCell")
             }
-            let drug = drugs[indexPath.row]
+            let drug = isSearchActive ? filteredDrugs[indexPath.row] : drugs[indexPath.row]
             cell.configure(with: drug)
             return cell
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let section = sections[section]
-        switch section {
-        case .medicine:
-            return drugs.count
-        }
+        return isSearchActive ? filteredDrugs.count : drugs.count
+    }
+}
+
+extension MedicineViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        isSearchActive = !searchText.isEmpty
+        filteredDrugs = isSearchActive ? drugs.filter { $0.name.localizedCaseInsensitiveContains(searchText) } : drugs
+        collectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        isSearchActive = false
+        filteredDrugs = drugs
+        collectionView.reloadData()
     }
 }
