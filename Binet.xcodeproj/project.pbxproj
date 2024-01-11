@@ -25,6 +25,7 @@
 		F1838B9D2B5038B500CDB486 /* SFProDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B942B5038B500CDB486 /* SFProDisplay-Thin.ttf */; };
 		F1838B9F2B50404500CDB486 /* Drug.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B9E2B50404500CDB486 /* Drug.swift */; };
 		F1838BA12B5040BA00CDB486 /* DrugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838BA02B5040BA00CDB486 /* DrugService.swift */; };
+		F1838BA32B505B9F00CDB486 /* DragDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838BA22B505B9F00CDB486 /* DragDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		F1838B942B5038B500CDB486 /* SFProDisplay-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Thin.ttf"; sourceTree = "<group>"; };
 		F1838B9E2B50404500CDB486 /* Drug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drug.swift; sourceTree = "<group>"; };
 		F1838BA02B5040BA00CDB486 /* DrugService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugService.swift; sourceTree = "<group>"; };
+		F1838BA22B505B9F00CDB486 /* DragDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				F1838B892B50328600CDB486 /* Medicine.swift */,
 				F1838B9E2B50404500CDB486 /* Drug.swift */,
 				F1838BA02B5040BA00CDB486 /* DrugService.swift */,
+				F1838BA22B505B9F00CDB486 /* DragDetailViewController.swift */,
 				F1838B7C2B502E1100CDB486 /* Assets.xcassets */,
 				F1838B7E2B502E1100CDB486 /* LaunchScreen.storyboard */,
 				F1838B812B502E1100CDB486 /* Info.plist */,
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1838B782B502E1000CDB486 /* MedicineViewController.swift in Sources */,
+				F1838BA32B505B9F00CDB486 /* DragDetailViewController.swift in Sources */,
 				F1838B742B502E1000CDB486 /* AppDelegate.swift in Sources */,
 				F1838B8A2B50328600CDB486 /* Medicine.swift in Sources */,
 				F1838B762B502E1000CDB486 /* SceneDelegate.swift in Sources */,
