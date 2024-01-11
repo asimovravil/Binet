@@ -9,6 +9,7 @@ import UIKit
 
 final class MedicineViewController: UIViewController {
     
+    var drugs: [Drug] = []
     let sections: [Medicine] = [.medicine]
     
     // MARK: - UI
@@ -33,6 +34,7 @@ final class MedicineViewController: UIViewController {
         setupViews()
         setupConstraints()
         setupNavigationBar()
+        loadDrugsData()
     }
     
     // MARK: - Setup Views
@@ -83,6 +85,23 @@ final class MedicineViewController: UIViewController {
 
     @objc func searchBarButtonTapped() {
         print("search")
+    }
+    
+    // MARK: - Load Credit Data
+    
+    private func loadDrugsData() {
+        let drugService = DrugService()
+        drugService.fetchDrugs { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let drugs):
+                    self?.drugs = drugs
+                    self?.collectionView.reloadData()
+                case .failure(let error):
+                    print("Ошибка: \(error)")
+                }
+            }
+        }
     }
     
     // MARK: - Create Layout
@@ -159,6 +178,8 @@ extension MedicineViewController: UICollectionViewDataSource, UICollectionViewDe
             ) as? MedicineCell else {
                 fatalError("Could not cast to MedicineCell")
             }
+            let drug = drugs[indexPath.row]
+            cell.configure(with: drug)
             return cell
         }
     }
@@ -167,7 +188,7 @@ extension MedicineViewController: UICollectionViewDataSource, UICollectionViewDe
         let section = sections[section]
         switch section {
         case .medicine:
-            return 6
+            return drugs.count
         }
     }
 }
