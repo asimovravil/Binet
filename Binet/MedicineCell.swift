@@ -36,6 +36,7 @@ final class MedicineCell: UICollectionViewCell {
     
     private lazy var medicineTitle: UILabel = {
         let label = UILabel()
+        label.text = "Болезни зерновых культур"
         label.textAlignment = .left
         label.textColor = .black
         label.numberOfLines = 0
@@ -46,6 +47,7 @@ final class MedicineCell: UICollectionViewCell {
     
     private lazy var medicineSubTitle: UILabel = {
         let label = UILabel()
+        label.text = "Среди болезней зерновых культур в настоящее время наиболь­ шую опасность представляют ..."
         label.textAlignment = .left
         label.textColor = UIColor(named: "grayCustom")
         label.numberOfLines = 0
@@ -85,6 +87,24 @@ final class MedicineCell: UICollectionViewCell {
     // MARK: - Setup Constraints
     
     private func setupConstraints() {
-
+        NSLayoutConstraint.activate([
+            medicineCard.topAnchor.constraint(equalTo: contentView.topAnchor),
+            medicineCard.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            medicineCard.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            medicineCard.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            medicineImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            medicineImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            medicineImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+            medicineImage.heightAnchor.constraint(equalToConstant: 82),
+            
+            medicineTitle.topAnchor.constraint(equalTo: medicineImage.bottomAnchor, constant: 12),
+            medicineTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            medicineTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+            
+            medicineSubTitle.topAnchor.constraint(equalTo: medicineTitle.bottomAnchor, constant: 6),
+            medicineSubTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
+            medicineSubTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
+        ])
     }
 }
