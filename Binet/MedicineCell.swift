@@ -44,6 +44,16 @@ final class MedicineCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var medicineSubTitle: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.font = UIFont(name: "Montserrat-Medium", size: 24)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
