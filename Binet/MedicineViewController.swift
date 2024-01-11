@@ -59,11 +59,39 @@ final class MedicineViewController: UIViewController {
             let section = self?.sections[sectionIndex] ?? .medicine
             switch section {
             case .medicine:
-                return .none
+                return self?.medicineSectionLayout()
             }
         }
     }
-
+    
+    // MARK: - Medicine Section Layout
+    
+    func medicineSectionLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1/2),
+            heightDimension: .absolute(296)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(296)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item, item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 15
+        section.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: 16,
+            bottom: 10,
+            trailing: 16
+        )
+        return section
+    }
 }
 
 extension MedicineViewController: UICollectionViewDataSource, UICollectionViewDelegate {
