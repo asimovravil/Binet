@@ -7,4 +7,6 @@
 
 import Foundation
 
-
+enum Medicine {
+    case medicine
+}
