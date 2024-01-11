@@ -39,7 +39,7 @@ final class MedicineCell: UICollectionViewCell {
         label.textAlignment = .center
         label.textColor = .black
         label.numberOfLines = 0
-        label.font = UIFont(name: "Montserrat-Medium", size: 24)
+        label.font = UIFont(name: "SFProDisplay-Semibold", size: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -49,7 +49,7 @@ final class MedicineCell: UICollectionViewCell {
         label.textAlignment = .center
         label.textColor = .black
         label.numberOfLines = 0
-        label.font = UIFont(name: "Montserrat-Medium", size: 24)
+        label.font = UIFont(name: "SFProDisplay-Medium", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

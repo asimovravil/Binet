@@ -14,6 +14,15 @@
 		F1838B802B502E1100CDB486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1838B7E2B502E1100CDB486 /* LaunchScreen.storyboard */; };
 		F1838B882B502FF400CDB486 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B872B502FF400CDB486 /* MedicineCell.swift */; };
 		F1838B8A2B50328600CDB486 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B892B50328600CDB486 /* Medicine.swift */; };
+		F1838B952B5038B500CDB486 /* SFProDisplay-Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B8C2B5038B500CDB486 /* SFProDisplay-Ultralight.ttf */; };
+		F1838B962B5038B500CDB486 /* SFProDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B8D2B5038B500CDB486 /* SFProDisplay-Medium.ttf */; };
+		F1838B972B5038B500CDB486 /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B8E2B5038B500CDB486 /* SFProDisplay-Black.ttf */; };
+		F1838B982B5038B500CDB486 /* SFProDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B8F2B5038B500CDB486 /* SFProDisplay-Light.ttf */; };
+		F1838B992B5038B500CDB486 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B902B5038B500CDB486 /* SFProDisplay-Regular.ttf */; };
+		F1838B9A2B5038B500CDB486 /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B912B5038B500CDB486 /* SFProDisplay-Bold.ttf */; };
+		F1838B9B2B5038B500CDB486 /* SFProDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B922B5038B500CDB486 /* SFProDisplay-Semibold.ttf */; };
+		F1838B9C2B5038B500CDB486 /* SFProDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B932B5038B500CDB486 /* SFProDisplay-Heavy.ttf */; };
+		F1838B9D2B5038B500CDB486 /* SFProDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1838B942B5038B500CDB486 /* SFProDisplay-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		F1838B812B502E1100CDB486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1838B872B502FF400CDB486 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
 		F1838B892B50328600CDB486 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		F1838B8C2B5038B500CDB486 /* SFProDisplay-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Ultralight.ttf"; sourceTree = "<group>"; };
+		F1838B8D2B5038B500CDB486 /* SFProDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		F1838B8E2B5038B500CDB486 /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
+		F1838B8F2B5038B500CDB486 /* SFProDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Light.ttf"; sourceTree = "<group>"; };
+		F1838B902B5038B500CDB486 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		F1838B912B5038B500CDB486 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		F1838B922B5038B500CDB486 /* SFProDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Semibold.ttf"; sourceTree = "<group>"; };
+		F1838B932B5038B500CDB486 /* SFProDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Heavy.ttf"; sourceTree = "<group>"; };
+		F1838B942B5038B500CDB486 /* SFProDisplay-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Thin.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,7 @@
 		F1838B722B502E1000CDB486 /* Binet */ = {
 			isa = PBXGroup;
 			children = (
+				F1838B8B2B5038B500CDB486 /* Fonts */,
 				F1838B732B502E1000CDB486 /* AppDelegate.swift */,
 				F1838B752B502E1000CDB486 /* SceneDelegate.swift */,
 				F1838B772B502E1000CDB486 /* MedicineViewController.swift */,
@@ -68,6 +87,22 @@
 				F1838B812B502E1100CDB486 /* Info.plist */,
 			);
 			path = Binet;
+			sourceTree = "<group>";
+		};
+		F1838B8B2B5038B500CDB486 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F1838B8C2B5038B500CDB486 /* SFProDisplay-Ultralight.ttf */,
+				F1838B8D2B5038B500CDB486 /* SFProDisplay-Medium.ttf */,
+				F1838B8E2B5038B500CDB486 /* SFProDisplay-Black.ttf */,
+				F1838B8F2B5038B500CDB486 /* SFProDisplay-Light.ttf */,
+				F1838B902B5038B500CDB486 /* SFProDisplay-Regular.ttf */,
+				F1838B912B5038B500CDB486 /* SFProDisplay-Bold.ttf */,
+				F1838B922B5038B500CDB486 /* SFProDisplay-Semibold.ttf */,
+				F1838B932B5038B500CDB486 /* SFProDisplay-Heavy.ttf */,
+				F1838B942B5038B500CDB486 /* SFProDisplay-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +163,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1838B9C2B5038B500CDB486 /* SFProDisplay-Heavy.ttf in Resources */,
 				F1838B802B502E1100CDB486 /* LaunchScreen.storyboard in Resources */,
+				F1838B9B2B5038B500CDB486 /* SFProDisplay-Semibold.ttf in Resources */,
+				F1838B962B5038B500CDB486 /* SFProDisplay-Medium.ttf in Resources */,
+				F1838B952B5038B500CDB486 /* SFProDisplay-Ultralight.ttf in Resources */,
+				F1838B9D2B5038B500CDB486 /* SFProDisplay-Thin.ttf in Resources */,
+				F1838B992B5038B500CDB486 /* SFProDisplay-Regular.ttf in Resources */,
+				F1838B982B5038B500CDB486 /* SFProDisplay-Light.ttf in Resources */,
 				F1838B7D2B502E1100CDB486 /* Assets.xcassets in Resources */,
+				F1838B972B5038B500CDB486 /* SFProDisplay-Black.ttf in Resources */,
+				F1838B9A2B5038B500CDB486 /* SFProDisplay-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
