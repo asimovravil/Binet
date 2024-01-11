@@ -73,14 +73,45 @@ class DragDetailViewController: UIViewController {
         super.viewDidLoad()
 
         setupViews()
+        setupConstraints()
     }
     
     // MARK: - Setup Views
     
     private func setupViews() {
-        [detailLogo, detailImage, favouriteImage, detailTitle, detailSubTitle].forEach {
+        [detailLogo, detailImage, favouriteImage, detailTitle, detailSubTitle, detailButton].forEach {
             view.addSubview($0)
         }
         view.backgroundColor = .white
+    }
+    
+    // MARK: - Setup Constraints
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            detailImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            detailImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            detailImage.heightAnchor.constraint(equalToConstant: 183),
+            
+            detailLogo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            detailLogo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            detailLogo.heightAnchor.constraint(equalToConstant: 32),
+            detailLogo.widthAnchor.constraint(equalToConstant: 32),
+            
+            favouriteImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            favouriteImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -34),
+            favouriteImage.heightAnchor.constraint(equalToConstant: 32),
+            favouriteImage.widthAnchor.constraint(equalToConstant: 32),
+            
+            detailTitle.topAnchor.constraint(equalTo: detailImage.bottomAnchor, constant: 32),
+            detailTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+
+            detailSubTitle.topAnchor.constraint(equalTo: detailTitle.bottomAnchor, constant: 8),
+            detailSubTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 14),
+            detailSubTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -33),
+            
+            detailButton.topAnchor.constraint(equalTo: detailSubTitle.bottomAnchor, constant: 16),
+            detailButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
     }
 }
