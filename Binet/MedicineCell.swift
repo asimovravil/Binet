@@ -36,7 +36,7 @@ final class MedicineCell: UICollectionViewCell {
     
     private lazy var medicineTitle: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.textColor = .black
         label.numberOfLines = 0
         label.font = UIFont(name: "SFProDisplay-Semibold", size: 13)
@@ -46,7 +46,7 @@ final class MedicineCell: UICollectionViewCell {
     
     private lazy var medicineSubTitle: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.textColor = UIColor(named: "grayCustom")
         label.numberOfLines = 0
         label.font = UIFont(name: "SFProDisplay-Medium", size: 12)
