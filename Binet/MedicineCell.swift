@@ -60,6 +60,7 @@ final class MedicineCell: UICollectionViewCell {
         super.init(frame: frame)
         
         setupViews()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -80,5 +81,10 @@ final class MedicineCell: UICollectionViewCell {
             contentView.addSubview($0)
         }
     }
+    
+    // MARK: - Setup Constraints
+    
+    private func setupConstraints() {
 
+    }
 }
