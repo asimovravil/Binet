@@ -54,6 +54,8 @@ final class MedicineCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: - Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -61,5 +63,12 @@ final class MedicineCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        medicineCard.layer.cornerRadius = 8
+        medicineImage.layer.cornerRadius = 8
     }
 }
