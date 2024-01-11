@@ -68,26 +68,28 @@ final class MedicineViewController: UIViewController {
     
     func medicineSectionLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1/2),
+            widthDimension: .fractionalWidth(0.5),
             heightDimension: .absolute(296)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(296)
+            heightDimension: .estimated(296)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item, item]
         )
         
+        group.interItemSpacing = .fixed(15)
+        
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 15
         section.contentInsets = NSDirectionalEdgeInsets(
             top: 0,
             leading: 16,
-            bottom: 10,
+            bottom: 15,
             trailing: 16
         )
         section.boundarySupplementaryItems = [supplementaryHeaderItem()]
