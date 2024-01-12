@@ -82,18 +82,12 @@
 		F1838B722B502E1000CDB486 /* Binet */ = {
 			isa = PBXGroup;
 			children = (
-				F1838B8B2B5038B500CDB486 /* Fonts */,
-				F1838B732B502E1000CDB486 /* AppDelegate.swift */,
-				F1838B752B502E1000CDB486 /* SceneDelegate.swift */,
-				F1838B772B502E1000CDB486 /* MedicineViewController.swift */,
-				F1838B872B502FF400CDB486 /* MedicineCell.swift */,
-				F1838B892B50328600CDB486 /* Medicine.swift */,
-				F1838B9E2B50404500CDB486 /* Drug.swift */,
-				F1838BA02B5040BA00CDB486 /* DrugService.swift */,
-				F1838BA22B505B9F00CDB486 /* DragDetailViewController.swift */,
-				F1838B7C2B502E1100CDB486 /* Assets.xcassets */,
-				F1838B7E2B502E1100CDB486 /* LaunchScreen.storyboard */,
-				F1838B812B502E1100CDB486 /* Info.plist */,
+				F1838BFC2B510B4D00CDB486 /* Application */,
+				F1838BFD2B510B6400CDB486 /* Controllers */,
+				F1838C012B510B8900CDB486 /* Network */,
+				F1838BFB2B510B4300CDB486 /* Resources */,
+				F1838C022B510B9C00CDB486 /* Storyboards */,
+				F1838BFA2B510B1E00CDB486 /* Supporting Files */,
 			);
 			path = Binet;
 			sourceTree = "<group>";
@@ -112,6 +106,84 @@
 				F1838B942B5038B500CDB486 /* SFProDisplay-Thin.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F1838BFA2B510B1E00CDB486 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1838B812B502E1100CDB486 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1838BFB2B510B4300CDB486 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1838B8B2B5038B500CDB486 /* Fonts */,
+				F1838B7C2B502E1100CDB486 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F1838BFC2B510B4D00CDB486 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F1838B732B502E1000CDB486 /* AppDelegate.swift */,
+				F1838B752B502E1000CDB486 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F1838BFD2B510B6400CDB486 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1838BFE2B510B6D00CDB486 /* Main */,
+				F1838C002B510B7D00CDB486 /* Detail */,
+				F1838BFF2B510B7500CDB486 /* SectionType */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1838BFE2B510B6D00CDB486 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F1838B772B502E1000CDB486 /* MedicineViewController.swift */,
+				F1838B872B502FF400CDB486 /* MedicineCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F1838BFF2B510B7500CDB486 /* SectionType */ = {
+			isa = PBXGroup;
+			children = (
+				F1838B892B50328600CDB486 /* Medicine.swift */,
+			);
+			path = SectionType;
+			sourceTree = "<group>";
+		};
+		F1838C002B510B7D00CDB486 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F1838BA22B505B9F00CDB486 /* DragDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F1838C012B510B8900CDB486 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F1838BA02B5040BA00CDB486 /* DrugService.swift */,
+				F1838B9E2B50404500CDB486 /* Drug.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F1838C022B510B9C00CDB486 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F1838B7E2B502E1100CDB486 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,7 +418,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66V736J4F3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Binet/Info.plist;
+				INFOPLIST_FILE = "Binet/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -373,7 +445,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66V736J4F3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Binet/Info.plist;
+				INFOPLIST_FILE = "Binet/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

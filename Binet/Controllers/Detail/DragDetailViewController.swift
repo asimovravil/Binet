@@ -8,14 +8,13 @@
 import UIKit
 import SafariServices
 
-class DragDetailViewController: UIViewController {
+final class DragDetailViewController: UIViewController {
 
     // MARK: - UI
     
     private lazy var detailLogo: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
-        imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -24,7 +23,6 @@ class DragDetailViewController: UIViewController {
     private lazy var detailImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "detailImage")
-        imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -33,7 +31,6 @@ class DragDetailViewController: UIViewController {
     private lazy var favouriteImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "favourite")
-        imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -41,7 +38,6 @@ class DragDetailViewController: UIViewController {
     
     private lazy var detailTitle: UILabel = {
         let label = UILabel()
-        label.text = "ДВД Шанс, КС"
         label.textAlignment = .left
         label.textColor = .black
         label.numberOfLines = 0
@@ -52,7 +48,6 @@ class DragDetailViewController: UIViewController {
     
     private lazy var detailSubTitle: UILabel = {
         let label = UILabel()
-        label.text = "Двухкомпонентный протравитель семян зерновых культур."
         label.textAlignment = .left
         label.textColor = UIColor(named: "grayCustom")
         label.numberOfLines = 0
@@ -135,7 +130,7 @@ class DragDetailViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    @objc func leftBarButtonTapped() {
+    @objc private func leftBarButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -154,14 +149,12 @@ class DragDetailViewController: UIViewController {
         if let detailImageUrl = URL(string: "http://shans.d2.i-partner.ru/\(drug.image)") {
             loadImage(from: detailImageUrl, into: detailImage)
         } else {
-            detailLogo.image = UIImage(named: "detailImage")
+            detailImage.image = UIImage(named: "detailImage")
         }
     }
 
     private func loadImage(from url: URL, into imageView: UIImageView) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let _ = self else { return }
-
+        URLSession.shared.dataTask(with: url) { [weak imageView] data, response, error in
             if let error = error {
                 print("Error loading image: \(error.localizedDescription)")
                 return
@@ -172,15 +165,15 @@ class DragDetailViewController: UIViewController {
                 return
             }
 
-            DispatchQueue.main.async {
-                imageView.image = image
+            DispatchQueue.main.async { [weak imageView] in
+                imageView?.image = image
             }
         }.resume()
     }
     
     // MARK: - Action
     
-    @objc func openWebsite() {
+    @objc private func openWebsite() {
         if let url = URL(string: "https://www.mic.by/spravochnaya-informatsiyap/klassifikatsiya-lekarstvennykh-sredstv/") {
             let safariVC = SFSafariViewController(url: url)
             self.present(safariVC, animated: true, completion: nil)

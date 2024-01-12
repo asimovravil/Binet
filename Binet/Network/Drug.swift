@@ -17,7 +17,7 @@ struct Drug: Codable {
     let description: String
     let fields: [Field]
 
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id
         case image
         case categories
@@ -57,7 +57,7 @@ struct Field: Codable {
     let value: String
     let image: String
 
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case typesId = "types_id"
         case type
         case name

@@ -9,6 +9,7 @@ import UIKit
 
 final class MedicineCell: UICollectionViewCell {
     
+    private var currentDataTask: URLSessionDataTask?
     static let reuseID = String(describing: MedicineCell.self)
     
     // MARK: - UI
@@ -69,6 +70,12 @@ final class MedicineCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        currentDataTask?.cancel()
+        medicineImage.image = nil
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -122,25 +129,27 @@ final class MedicineCell: UICollectionViewCell {
     }
     
     private func medicineImage(from url: URL) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+        currentDataTask?.cancel()
+        currentDataTask = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             if let error = error {
                 print("Error loading image: \(error.localizedDescription)")
                 return
             }
-            
+
             guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 print("Invalid image data or response")
                 return
             }
-            
+
             guard let image = UIImage(data: data) else {
                 print("Invalid image data")
                 return
             }
-            
-            DispatchQueue.main.async {
+
+            DispatchQueue.main.async { [weak self] in
                 self?.medicineImage.image = image
             }
-        }.resume()
+        }
+        currentDataTask?.resume()
     }
 }

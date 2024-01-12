@@ -9,11 +9,12 @@ import UIKit
 
 final class MedicineViewController: UIViewController {
     
+    private let drugService: DrugService
     var drugs: [Drug] = []
     private var isSearchActive: Bool = false
     private var filteredDrugs: [Drug] = []
     let sections: [Medicine] = [.medicine]
-    private var searchController: UISearchController?
+    private weak var searchController: UISearchController?
     
     // MARK: - UI
     
@@ -39,6 +40,16 @@ final class MedicineViewController: UIViewController {
         setupNavigationBar()
         loadDrugsData()
     }
+    
+    init(drugService: DrugService) {
+        self.drugService = drugService
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
     // MARK: - Setup Views
     
@@ -84,7 +95,7 @@ final class MedicineViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
-    @objc func leftBarButtonTapped() {
+    @objc private func leftBarButtonTapped() {
         if isSearchActive {
             isSearchActive = false
             filteredDrugs.removeAll()
@@ -93,26 +104,24 @@ final class MedicineViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
-    @objc func searchBarButtonTapped() {
+    @objc private func searchBarButtonTapped() {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Найти препараты"
         searchBar.delegate = self
 
-        searchController = UISearchController(searchResultsController: nil)
-        searchController?.searchBar.delegate = self
-        searchController?.searchBar.placeholder = "Найти препараты"
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Найти препараты"
+        self.searchController = searchController
 
-        if let searchController = searchController {
-            present(searchController, animated: true, completion: nil)
-        }
+        present(searchController, animated: true, completion: nil)
     }
     
     // MARK: - Load Credit Data
     
     private func loadDrugsData() {
-        let drugService = DrugService()
         drugService.fetchDrugs { [weak self] result in
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 switch result {
                 case .success(let drugs):
                     self?.drugs = drugs
@@ -138,7 +147,7 @@ final class MedicineViewController: UIViewController {
     
     // MARK: - Medicine Section Layout
     
-    func medicineSectionLayout() -> NSCollectionLayoutSection {
+    private func medicineSectionLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.5),
             heightDimension: .absolute(296)
@@ -214,10 +223,6 @@ extension MedicineViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     private func openDrugDetail(with drug: Drug) {
-        if isSearchActive {
-            searchController?.dismiss(animated: true, completion: nil)
-        }
-
         let detailVC = DragDetailViewController()
         detailVC.configureWithDrug(drug)
         searchController?.dismiss(animated: true, completion: nil)
