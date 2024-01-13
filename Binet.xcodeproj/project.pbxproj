@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F16CC1BA2B529D4500E08CB2 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16CC1B82B529D4500E08CB2 /* AppColor.swift */; };
+		F16CC1BB2B529D4500E08CB2 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16CC1B92B529D4500E08CB2 /* AppImage.swift */; };
 		F1838B742B502E1000CDB486 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B732B502E1000CDB486 /* AppDelegate.swift */; };
 		F1838B762B502E1000CDB486 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B752B502E1000CDB486 /* SceneDelegate.swift */; };
 		F1838B782B502E1000CDB486 /* MedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1838B772B502E1000CDB486 /* MedicineViewController.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F16CC1B82B529D4500E08CB2 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		F16CC1B92B529D4500E08CB2 /* AppImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		F1838B702B502E1000CDB486 /* Binet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Binet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1838B732B502E1000CDB486 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1838B752B502E1000CDB486 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			children = (
 				F1838B8B2B5038B500CDB486 /* Fonts */,
 				F1838B7C2B502E1100CDB486 /* Assets.xcassets */,
+				F16CC1B82B529D4500E08CB2 /* AppColor.swift */,
+				F16CC1B92B529D4500E08CB2 /* AppImage.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				F1838BA12B5040BA00CDB486 /* DrugService.swift in Sources */,
 				F1838B882B502FF400CDB486 /* MedicineCell.swift in Sources */,
 				F1838B9F2B50404500CDB486 /* Drug.swift in Sources */,
+				F16CC1BA2B529D4500E08CB2 /* AppColor.swift in Sources */,
+				F16CC1BB2B529D4500E08CB2 /* AppImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
