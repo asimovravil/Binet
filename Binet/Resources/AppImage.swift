@@ -35,4 +35,7 @@ enum AppImage: String, AppImageProtocol {
     case favourite
     case left
     case search
+    case logo
+    case detailImage
+    case imageCell
 }

@@ -14,7 +14,6 @@ final class DragDetailViewController: UIViewController {
     
     private lazy var detailLogo: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -22,7 +21,6 @@ final class DragDetailViewController: UIViewController {
     
     private lazy var detailImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "detailImage")
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -30,7 +28,7 @@ final class DragDetailViewController: UIViewController {
     
     private lazy var favouriteImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "favourite")
+        imageView.image = AppImage.favourite.uiImage
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -49,7 +47,7 @@ final class DragDetailViewController: UIViewController {
     private lazy var detailSubTitle: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
-        label.textColor = UIColor(named: "grayCustom")
+        label.textColor = AppColor.grayCustom.uiColor
         label.numberOfLines = 0
         label.font = UIFont(name: "SFProDisplay-Regular", size: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +56,7 @@ final class DragDetailViewController: UIViewController {
     
     private lazy var detailButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "buttonBuy"), for: .normal)
+        button.setImage(AppImage.buttonBuy.uiImage, for: .normal)
         button.addTarget(self, action: #selector(openWebsite), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -117,13 +115,13 @@ final class DragDetailViewController: UIViewController {
     // MARK: - Setup Navigation Bar
     
     private func setupNavigationBar() {
-        let leftImage = UIImage(named: "left.pdf")
+        let leftImage = AppImage.left.uiImage
         let leftBarButtonItem = UIBarButtonItem(image: leftImage, style: .plain, target: self, action: #selector(leftBarButtonTapped))
         navigationItem.leftBarButtonItem = leftBarButtonItem
         
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = UIColor(named: "greenCustom")
+        navBarAppearance.backgroundColor = AppColor.greenCustom.uiColor
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         
@@ -143,13 +141,13 @@ final class DragDetailViewController: UIViewController {
         if let logoImageUrl = URL(string: "http://shans.d2.i-partner.ru/\(drug.categories.icon)") {
             loadImage(from: logoImageUrl, into: detailLogo)
         } else {
-            detailLogo.image = UIImage(named: "logo")
+            detailLogo.image = AppImage.logo.uiImage
         }
 
         if let detailImageUrl = URL(string: "http://shans.d2.i-partner.ru/\(drug.image)") {
             loadImage(from: detailImageUrl, into: detailImage)
         } else {
-            detailImage.image = UIImage(named: "detailImage")
+            detailImage.image = AppImage.detailImage.uiImage
         }
     }
 

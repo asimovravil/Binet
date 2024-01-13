@@ -28,7 +28,6 @@ final class MedicineCell: UICollectionViewCell {
     
     private lazy var medicineImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "imageCell")
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +36,6 @@ final class MedicineCell: UICollectionViewCell {
     
     private lazy var medicineTitle: UILabel = {
         let label = UILabel()
-        label.text = "Болезни зерновых культур"
         label.textAlignment = .left
         label.textColor = .black
         label.numberOfLines = 0
@@ -48,9 +46,8 @@ final class MedicineCell: UICollectionViewCell {
     
     private lazy var medicineSubTitle: UILabel = {
         let label = UILabel()
-        label.text = "Среди болезней зерновых культур в настоящее время наиболь­ шую опасность представляют ..."
         label.textAlignment = .left
-        label.textColor = UIColor(named: "grayCustom")
+        label.textColor = AppColor.grayCustom.uiColor
         label.numberOfLines = 0
         label.font = UIFont(name: "SFProDisplay-Medium", size: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -124,7 +121,7 @@ final class MedicineCell: UICollectionViewCell {
         if let imageUrl = URL(string: "http://shans.d2.i-partner.ru/\(drug.image)") {
             medicineImage(from: imageUrl)
         } else {
-            medicineImage.image = UIImage(named: "imageCell")
+            medicineImage.image = AppImage.imageCell.uiImage
         }
     }
     

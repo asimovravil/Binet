@@ -72,23 +72,23 @@ final class MedicineViewController: UIViewController {
     // MARK: - Setup Navigation Bar
     
     private func setupNavigationBar() {
-        let leftImage = UIImage(named: "left.pdf")
+        let leftImage = AppImage.left.uiImage
         let leftBarButtonItem = UIBarButtonItem(image: leftImage, style: .plain, target: self, action: #selector(leftBarButtonTapped))
         navigationItem.leftBarButtonItem = leftBarButtonItem
         
         let titleLabel = UILabel()
-        titleLabel.text = "Болезни"
+        titleLabel.text = "Препараты"
         titleLabel.textColor = .white
         titleLabel.font = UIFont(name: "SFProDisplay-SemiBold", size: 17)
         navigationItem.titleView = titleLabel
         
-        let searchImage = UIImage(named: "search.pdf")
+        let searchImage = AppImage.search.uiImage
         let searchBarButtonItem = UIBarButtonItem(image: searchImage, style: .plain, target: self, action: #selector(searchBarButtonTapped))
         navigationItem.rightBarButtonItem = searchBarButtonItem
         
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = UIColor(named: "greenCustom")
+        navBarAppearance.backgroundColor = AppColor.greenCustom.uiColor
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         
